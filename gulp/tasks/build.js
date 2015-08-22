@@ -3,7 +3,6 @@ var gulp = require('gulp')
   , gutil = require('gulp-util')
   , gulpif = require('gulp-if')
   , browserify = require('browserify')
-  , reactify = require('reactify')
   , watchify = require('watchify')
   , source = require('vinyl-source-stream')
   , buffer = require('vinyl-buffer')
@@ -25,7 +24,6 @@ Object.keys(package.dependencies)
 })
 
 browserifyStream.on('log', gutil.log)
-browserifyStream.transform(reactify)
 
 
 function task(){
