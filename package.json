@@ -20,10 +20,19 @@
     "url": "https://github.com/christian-fei/React-Accordion/issues"
   },
   "homepage": "https://github.com/christian-fei/React-Accordion#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
+    "chai": "^3.2.0",
     "gulp": "^3.9.0",
+    "gulp-karma": "0.0.4",
+    "karma": "^0.13.9",
+    "karma-browserify": "^4.3.0",
+    "karma-chai": "^0.1.0",
+    "karma-mocha": "^0.2.0",
+    "karma-mocha-reporter": "^1.1.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "mocha": "^2.2.5",
+    "phantomjs": "^1.9.18",
     "require-dir": "^0.3.0"
   }
 }
