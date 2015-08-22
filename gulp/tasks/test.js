@@ -3,7 +3,7 @@ var gulp = require('gulp')
 var karma = require('gulp-karma')
 
 function test(done){
-  return gulp.src(config.paths.test)
+  return gulp.src(config.files.test)
     .pipe(karma({
       configFile: process.cwd() + '/karma.conf.js',
       action: 'run'

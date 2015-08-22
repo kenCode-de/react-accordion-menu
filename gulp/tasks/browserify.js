@@ -8,6 +8,7 @@ var gulp = require('gulp')
   , source = require('vinyl-source-stream')
   , buffer = require('vinyl-buffer')
   , uglify = require('gulp-uglify')
+  , package = require('../../package.json')
 
 var PRODUCTION = !!process.env.PRODUCTION
 var dev = false
@@ -18,7 +19,12 @@ var browserifyStream = browserify({
       // watchify requires these options
       cache: {}, packageCache: {}, fullPaths: true
     })
-browserifyStream.exclude('react')
+
+Object.keys(package.dependencies)
+.forEach(function (packageName) {
+  browserifyStream.exclude(packageName)
+})
+
 browserifyStream.transform(reactify)
 
 
@@ -45,7 +51,7 @@ function bundle(){
     .pipe(source('index.js'))
     .pipe(buffer())
     .pipe(gulpif(PRODUCTION, uglify()))
-    .pipe(gulp.dest(config.paths.dist))
+    .pipe(gulp.dest(config.files.dist))
 }
 gulp.task('browserify', task)
 

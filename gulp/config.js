@@ -1,8 +1,8 @@
 module.exports = {
-  paths: {
+  files: {
     js: ['./src/**/*.js'],
     test: ['./src/**/*.test.js'],
-    dist: './dist'
+    dist: './dist',
   },
   entryFiles: {
     main: './src/index.js',
