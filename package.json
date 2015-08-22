@@ -4,7 +4,7 @@
   "description": "a simple accordion in react",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -20,7 +20,9 @@
     "url": "https://github.com/christian-fei/React-Accordion/issues"
   },
   "homepage": "https://github.com/christian-fei/React-Accordion#readme",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^0.13.3"
+  },
   "devDependencies": {
     "chai": "^3.2.0",
     "gulp": "^3.9.0",
@@ -31,6 +33,7 @@
     "karma-mocha": "^0.2.0",
     "karma-mocha-reporter": "^1.1.1",
     "karma-phantomjs-launcher": "^0.2.1",
+    "karma-phantomjs-shim": "^1.1.1",
     "mocha": "^2.2.5",
     "phantomjs": "^1.9.18",
     "require-dir": "^0.3.0"
