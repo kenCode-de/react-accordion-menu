@@ -5,6 +5,6 @@ module.exports = {
     dist: './dist'
   },
   entryFiles: {
-    browserify: './src/index.js',
+    main: './src/index.js',
   }
 }
