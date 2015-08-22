@@ -1,12 +1,12 @@
 var React = require('react')
-var TestUtils = require('react/addons').TestUtils
+require('react/addons')
+var TestUtils = React.addons.TestUtils
 
 var AccordionNode = require('./AccordionNode.js')
 describe('AccordionNode', function () {
   it('render AccordionNode with no children', function () {
-    var TestUtils = require('react').addons.TestUtils
-    var node = TestUtils.renderIntoDocument( <AccordionNode/>)
+    var node = TestUtils.renderIntoDocument( <AccordionNode expanded={false}/>)
     var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'span').getDOMNode()
-    expect( elem.innerHTML ).to.match(/AccordionNode/)
+    expect( elem.getAttribute('class') ).to.match(/collapsed/)
   })
 })
