@@ -1,0 +1,23 @@
+{
+  "name": "react-accordion",
+  "version": "0.0.0",
+  "description": "a simple accordion in react",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christian-fei/React-Accordion.git"
+  },
+  "keywords": [
+    "react",
+    "accordion"
+  ],
+  "author": "Christian Fei",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/christian-fei/React-Accordion/issues"
+  },
+  "homepage": "https://github.com/christian-fei/React-Accordion#readme"
+}
