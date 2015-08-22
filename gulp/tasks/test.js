@@ -2,9 +2,9 @@ var config = require('../config')
 var gulp = require('gulp')
 var karma = require('gulp-karma')
 
-var PRODUCTION = !!process.env.PRODUCTION
+var development = false
 
-function test(done){
+function task(){
   return gulp.src(config.files.test)
     .pipe(karma({
       configFile: process.cwd() + '/karma.conf.js',
@@ -12,12 +12,17 @@ function test(done){
     }))
     .on('error', function(err) {
       this.emit('end')
-      if( PRODUCTION ){
+      if( !development ){
         throw err
       }
     })
 }
 
-gulp.task('test', test)
+function taskFactory(options){
+  development = options.development
+  return task()
+}
 
-module.exports = test
+gulp.task('test', task)
+
+module.exports = taskFactory
