@@ -1,9 +1,10 @@
 var config = require('../config')
 var gulp = require('gulp')
 
-function dist(){
-}
+var buildTaskFactory = require('./build')
 
-gulp.task('dist', dist)
-
-module.exports = dist
+gulp.task('dist', function(){
+  return buildTaskFactory({
+    dist: true
+  })
+})

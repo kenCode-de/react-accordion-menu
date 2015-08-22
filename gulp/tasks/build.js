@@ -10,12 +10,11 @@ var gulp = require('gulp')
   , uglify = require('gulp-uglify')
   , package = require('../../package.json')
 
-var PRODUCTION = !!process.env.PRODUCTION
-var dev = false
+var development = undefined
+var dist = undefined
 var browserifyStream = browserify({
       entries: config.entryFiles.main,
       insertGlobals: false,
-      debug: !PRODUCTION,
       // watchify requires these options
       cache: {}, packageCache: {}, fullPaths: true
     })
@@ -25,34 +24,42 @@ Object.keys(package.dependencies)
   browserifyStream.exclude(packageName)
 })
 
+browserifyStream.on('log', gutil.log)
 browserifyStream.transform(reactify)
 
 
-function task(_dev){
-  if( typeof _dev !== 'function' ){
-    dev = _dev
-  }
-
-  if( dev ){
+function task(){
+  if( development === true ){
     browserifyStream = watchify(browserifyStream)
     browserifyStream.on('update', bundle)
   }
-  browserifyStream.on('log', gutil.log)
   return bundle()
 }
 
+function taskFactory(options){
+  development = options.development
+  dist = options.dist
+  return task()
+}
+
 function bundle(){
+  console.log( '-- development', development )
+  console.log( '-- dist', dist )
   return browserifyStream.bundle()
     .on('error', function(err){
       gutil.log('Browserify Error')
       gutil.log(err.message)
       this.emit('end')
+      if( !development ){
+        throw err
+      }
     })
     .pipe(source('index.js'))
     .pipe(buffer())
-    .pipe(gulpif(PRODUCTION, uglify()))
+    .pipe(gulpif(dist === true, uglify()))
     .pipe(gulp.dest(config.files.dist))
 }
-gulp.task('browserify', task)
 
-module.exports = task
+gulp.task('build', task)
+
+module.exports = taskFactory

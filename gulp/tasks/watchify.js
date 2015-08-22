@@ -1,7 +1,9 @@
 var gulp = require('gulp')
 
-var browserifyTask = require('./browserify')
+var buildTaskFactory = require('./build')
 
 gulp.task('watchify', function(){
-  return browserifyTask(true)
+  return buildTaskFactory({
+    development: true
+  })
 })

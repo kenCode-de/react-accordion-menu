@@ -1,6 +1,6 @@
 var gulp = require('gulp')
 
 gulp.task('default', [
-  'browserify',
+  'build',
   'test'
 ])
