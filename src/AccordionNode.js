@@ -18,7 +18,11 @@ var AccordionNode = React.createClass({
       onClick: noop,
     }
   },
-  _onClick: function(){
+  _onClick: function(event){
+    event.stopPropagation()
+    if( event.currentTarget !== this.getDOMNode() ){
+      return
+    }
     this.setState({
       expanded: !this.state.expanded
     })
