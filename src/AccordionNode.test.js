@@ -21,4 +21,16 @@ describe('AccordionNode', function () {
     var elems = TestUtils.scryRenderedDOMComponentsWithClass(node, 'child')
     expect( elems.length ).to.eql( 1 )
   })
+  it('recursively renders AccordionNodes', function () {
+    var child = <AccordionNode>
+                  <span className="child">child node</span>
+                </AccordionNode>
+    var node = TestUtils.renderIntoDocument( <AccordionNode>{child}</AccordionNode> )
+    var nodesElems = TestUtils.scryRenderedComponentsWithType(node, AccordionNode)
+
+    expect( nodesElems.length ).to.eql( 2 )
+
+    var childElems = TestUtils.scryRenderedDOMComponentsWithClass(node, 'child')
+    expect( childElems.length ).to.eql( 1 )
+  })
 })
