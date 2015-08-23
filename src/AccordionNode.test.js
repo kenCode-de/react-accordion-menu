@@ -6,12 +6,12 @@ var AccordionNode = require('./AccordionNode.js')
 describe('AccordionNode', function () {
   it('is collapsed by default', function () {
     var node = TestUtils.renderIntoDocument( <AccordionNode/>)
-    var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'li').getDOMNode()
+    var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'ul').getDOMNode()
     expect( elem.getAttribute('class') ).to.match(/collapsed/)
   })
   it('when clicked becomes expanded', function () {
     var node = TestUtils.renderIntoDocument( <AccordionNode/>)
-    var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'li').getDOMNode()
+    var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'ul').getDOMNode()
     TestUtils.Simulate.click(elem)
     expect( elem.getAttribute('class') ).to.match(/expanded/)
   })

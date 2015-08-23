@@ -3,15 +3,32 @@
   <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style type="text/css">
+      li {
+        list-style-type: none;
+      }
+    </style>
   </head>
   <body>
     <main></main>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js" type="text/javascript"></script>
-    <script src="../dist/index.js" type="text/javascript"></script>
+    <script src="../dist/Accordion.js" type="text/javascript"></script>
     <script type="text/jsx">
-      React.render(<AccordionNode/>, document.querySelector('main'))
+      var accordion = <AccordionNode>
+                        <span>child 1</span>
+                        <AccordionNode>
+                          <span>child 1.1</span>
+                          <AccordionNode>
+                            <span>child 1.1.1</span>
+                          </AccordionNode>
+                          <AccordionNode>
+                            <span>child 1.1.2</span>
+                          </AccordionNode>
+                        </AccordionNode>
+                      </AccordionNode>
+      React.render(accordion, document.querySelector('main'))
     </script>
   </body>
 </html>
