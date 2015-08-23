@@ -1,12 +1,11 @@
-var EventEmitter = require('events').EventEmitter
+var MicroEvent = require('./MicroEvent')
 
 function AccordionEvents(){
-  EventEmitter.call(this)
-  this.setMaxListeners(100)
+  MicroEvent.call(this)
   this.on('click:node', function(node){
     this.emit('reset', node)
   }.bind(this))
 }
-AccordionEvents.prototype = EventEmitter.prototype
+AccordionEvents.prototype = MicroEvent.prototype
 
 module.exports = new AccordionEvents
