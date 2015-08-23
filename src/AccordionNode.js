@@ -1,5 +1,4 @@
 var React = window.React || require('react')
-var classnames = require('classnames')
 var noop = function(){}
 
 var AccordionNode = React.createClass({
@@ -20,13 +19,19 @@ var AccordionNode = React.createClass({
   },
   _onClick: function(event){
     event.stopPropagation()
-    if( event.currentTarget !== this.getDOMNode() ){
+    if( this._isChildNode(event.currentTarget) ){
       return
     }
+    this._toggleExpanded()
+    this.props.onClick.apply(this, arguments)
+  },
+  _toggleExpanded: function(){
     this.setState({
       expanded: !this.state.expanded
     })
-    this.props.onClick.apply(this, arguments)
+  },
+  _isChildNode: function(node){
+    return node !== this.getDOMNode()
   },
   render: function(){
     var className = this.state.expanded ? 'expanded' : 'collapsed'
