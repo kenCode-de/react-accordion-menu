@@ -27,9 +27,9 @@ var AccordionNode = React.createClass({
   },
   render: function(){
     var className = this.state.expanded ? 'expanded' : 'collapsed'
-    return  <span className={className} onClick={this._onClick}>
+    return  <li className={className} onClick={this._onClick}>
               I am an AccordionNode
-            </span>
+            </li>
   }
 })
 
