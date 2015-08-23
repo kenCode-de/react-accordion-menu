@@ -1,5 +1,6 @@
 var React = window.React || require('react')
 var classnames = require('classnames')
+var noop = function(){}
 
 var AccordionNode = React.createClass({
   propTypes : {
@@ -14,9 +15,7 @@ var AccordionNode = React.createClass({
   getDefaultProps: function(){
     return {
       expanded: false,
-      onClick: function() {
-        console.log("AccordionNode clicked")
-      },
+      onClick: noop,
     }
   },
   _onClick: function(){
