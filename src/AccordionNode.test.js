@@ -9,4 +9,10 @@ describe('AccordionNode', function () {
     var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'span').getDOMNode()
     expect( elem.getAttribute('class') ).to.match(/collapsed/)
   })
+  it('when clicked becomes expanded', function () {
+    var node = TestUtils.renderIntoDocument( <AccordionNode/>)
+    var elem = TestUtils.findRenderedDOMComponentWithTag(node, 'span').getDOMNode()
+    TestUtils.Simulate.click(elem)
+    expect( elem.getAttribute('class') ).to.match(/expanded/)
+  })
 })

@@ -6,20 +6,28 @@ var AccordionNode = React.createClass({
     expanded: React.PropTypes.bool,
     onClick: React.PropTypes.func,
   },
-  getInitialState: function () {
-    return {};
+  getInitialState: function(){
+    return {
+      expanded: !!this.props.expanded
+    }
   },
-  getDefaultProps: function () {
+  getDefaultProps: function(){
     return {
       expanded: false,
-      onClick: function(depth) {
-        console.log("AccordionNode clicked: ", depth)
+      onClick: function() {
+        console.log("AccordionNode clicked")
       },
     }
   },
+  _onClick: function(){
+    this.setState({
+      expanded: !this.state.expanded
+    })
+    this.props.onClick.apply(this, arguments)
+  },
   render: function(){
-    var className = this.props.expanded ? 'expanded' : 'collapsed'
-    return  <span className={className} onClick={this.props.onClick}>
+    var className = this.state.expanded ? 'expanded' : 'collapsed'
+    return  <span className={className} onClick={this._onClick}>
               I am an AccordionNode
             </span>
   }
