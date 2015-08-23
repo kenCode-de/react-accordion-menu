@@ -2,6 +2,7 @@ var config = require('../config')
 var gulp = require('gulp')
   , gutil = require('gulp-util')
   , gulpif = require('gulp-if')
+  , rename = require('gulp-rename')
   , browserify = require('browserify')
   , watchify = require('watchify')
   , source = require('vinyl-source-stream')
@@ -49,10 +50,13 @@ function bundle(){
         throw err
       }
     })
-    .pipe(source('index.js'))
+    .pipe(source('Accordion.js'))
     .pipe(buffer())
-    .pipe(gulpif(dist === true, uglify()))
     .pipe(gulp.dest(config.files.dist))
+    .pipe(gulpif(dist === true, rename('Accordion.min.js')))
+    .pipe(gulpif(dist === true, uglify()))
+    .pipe(gulpif(dist === true, gulp.dest(config.files.dist)))
+
 }
 
 gulp.task('build', task)
