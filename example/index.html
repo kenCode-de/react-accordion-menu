@@ -3,16 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>Document</title>
-    <style type="text/css">
+    <style type="text/css" rel="stylesheet">
+      ul {
+        border: 1px solid black;
+      }
       li {
         list-style-type: none;
-        -webkit-transition: all .3s ease-in-out;
-        -o-transition: all .3s ease-in-out;
-        transition: all .3s ease-in-out;
+      }
+      li .content {
+        -webkit-transition: all .5s ease-in-out;
+        -o-transition: all .5s ease-in-out;
+        transition: all .5s ease-in-out;
         overflow: hidden;
+        max-height: 750px;
       }
       .collapsed .content {
-        height: 0;
+        max-height: 0;
       }
     </style>
   </head>
@@ -53,7 +59,15 @@
                                     <div className="title">Child 2.3.1</div>
                                   </AccordionNode>
                                   <AccordionNode>
-                                    <div className="title">Child 2.3.2</div>
+                                    <div className="title">Child 2.3.2 with children</div>
+                                    <div className="content">
+                                      <AccordionNode>
+                                        <div className="title">Child 2.3.2.1</div>
+                                      </AccordionNode>
+                                      <AccordionNode>
+                                        <div className="title">Child 2.3.2.2</div>
+                                      </AccordionNode>
+                                    </div>
                                   </AccordionNode>
                                 </div>
                               </AccordionNode>
