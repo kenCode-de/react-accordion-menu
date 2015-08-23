@@ -28,6 +28,7 @@
     "browserify": "^11.0.1",
     "chai": "^3.2.0",
     "gulp": "^3.9.0",
+    "gulp-gh-pages": "^0.5.2",
     "gulp-if": "^1.2.5",
     "gulp-karma": "0.0.4",
     "gulp-react": "^3.0.1",

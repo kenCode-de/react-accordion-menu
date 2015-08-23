@@ -53,6 +53,7 @@ function bundle(){
     .pipe(source('Accordion.js'))
     .pipe(buffer())
     .pipe(gulp.dest(config.files.dist))
+    .pipe(gulp.dest(config.files.example))
     .pipe(gulpif(dist === true, rename('Accordion.min.js')))
     .pipe(gulpif(dist === true, uglify()))
     .pipe(gulpif(dist === true, gulp.dest(config.files.dist)))
