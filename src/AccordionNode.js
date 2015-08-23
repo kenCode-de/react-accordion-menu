@@ -1,3 +1,4 @@
+var React = window.React || require('react')
 var classnames = require('classnames')
 
 var AccordionNode = React.createClass({

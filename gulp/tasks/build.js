@@ -18,7 +18,7 @@ var browserifyStream = browserify({
       cache: {}, packageCache: {}, fullPaths: true
     })
 
-browserifyStream.exclude('react')
+browserifyStream.external('react')
 
 browserifyStream.on('log', gutil.log)
 
