@@ -17,11 +17,19 @@ var AccordionNode = React.createClass({
       onClick: noop,
     }
   },
+  render: function(){
+    var className = this.state.expanded ? 'expanded' : 'collapsed'
+    var children = this.props.children
+    return  <ul className={className} onClick={this._onClick}>
+              <li>
+                {React.Children.map(this.props.children, function(element, idx) {
+                  return React.cloneElement(element, { ref: idx })
+                })}
+              </li>
+            </ul>
+  },
   _onClick: function(event){
     event.stopPropagation()
-    if( this._isChildNode(event.currentTarget) ){
-      return
-    }
     this._toggleExpanded()
     this.props.onClick.apply(this, arguments)
   },
@@ -30,18 +38,6 @@ var AccordionNode = React.createClass({
       expanded: !this.state.expanded
     })
   },
-  _isChildNode: function(node){
-    return node !== this.getDOMNode()
-  },
-  render: function(){
-    var className = this.state.expanded ? 'expanded' : 'collapsed'
-    var children = this.props.children
-    return  <ul className={className} onClick={this._onClick}>
-              <li>
-                {children}
-              </li>
-            </ul>
-  }
 })
 
 module.exports = AccordionNode
