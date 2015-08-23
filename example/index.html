@@ -24,16 +24,38 @@
     <script src="Accordion.js" type="text/javascript"></script>
     <script type="text/jsx">
       var accordion = <AccordionNode>
-                        <div className="title">child 1</div>
+                        <div className="title">Root</div>
                         <div className="content">
                           <AccordionNode>
-                            <div className="title">child 1.1</div>
+                            <div className="title">Child 1 with children</div>
                             <div className="content">
                               <AccordionNode>
-                                <div className="title">child 1.1.1</div>
+                                <div className="title">Child 1.1</div>
                               </AccordionNode>
                               <AccordionNode>
-                                <div className="title">child 1.1.2</div>
+                                <div className="title">Child 1.2</div>
+                              </AccordionNode>
+                            </div>
+                          </AccordionNode>
+                          <AccordionNode>
+                            <div className="title">Child 2 with children</div>
+                            <div className="content">
+                              <AccordionNode>
+                                <div className="title">Child 2.1</div>
+                              </AccordionNode>
+                              <AccordionNode>
+                                <div className="title">Child 2.2</div>
+                              </AccordionNode>
+                              <AccordionNode>
+                                <div className="title">Child 2.3 with children</div>
+                                <div className="content">
+                                  <AccordionNode>
+                                    <div className="title">Child 2.3.1</div>
+                                  </AccordionNode>
+                                  <AccordionNode>
+                                    <div className="title">Child 2.3.2</div>
+                                  </AccordionNode>
+                                </div>
                               </AccordionNode>
                             </div>
                           </AccordionNode>
