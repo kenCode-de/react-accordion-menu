@@ -1,6 +1,4 @@
 var EventEmitter = require('events').EventEmitter
-var util = require('util')
-
 
 function AccordionEvents(){
   EventEmitter.call(this)
@@ -9,6 +7,6 @@ function AccordionEvents(){
     this.emit('reset', node)
   }.bind(this))
 }
-util.inherits(AccordionEvents, EventEmitter)
+AccordionEvents.prototype = EventEmitter.prototype
 
 module.exports = new AccordionEvents
