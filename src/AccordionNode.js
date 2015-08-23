@@ -1,5 +1,7 @@
 var React = window.React || require('react')
 var noop = function(){}
+var AccordionEvents = require('./AccordionEvents')
+var AccordionUtils = require('./AccordionUtils')
 
 var AccordionNode = React.createClass({
   propTypes : {
@@ -17,19 +19,27 @@ var AccordionNode = React.createClass({
       onClick: noop,
     }
   },
+  componentWillMount: function(){
+    AccordionEvents.on('reset', function(node){
+      var _isSibling = AccordionUtils.isSiblingOf(node.getDOMNode(), this.getDOMNode())
+
+      if( _isSibling ){
+        this.setState({
+          expanded: false
+        })
+      }
+    }.bind(this))
+  },
   render: function(){
     var className = this.state.expanded ? 'expanded' : 'collapsed'
     var children = this.props.children
     return  <ul className={className} onClick={this._onClick}>
-              <li>
-                {React.Children.map(this.props.children, function(element, idx) {
-                  return React.cloneElement(element, { ref: idx })
-                })}
-              </li>
+              <li>{children}</li>
             </ul>
   },
   _onClick: function(event){
     event.stopPropagation()
+    AccordionEvents.emit('click:node', this)
     this._toggleExpanded()
     this.props.onClick.apply(this, arguments)
   },
