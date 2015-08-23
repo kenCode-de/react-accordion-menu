@@ -4,9 +4,7 @@ var testTaskFactory = require('./test')
 
 
 gulp.task('watch', ['default','watchify'], function() {
-  gulp.watch([config.files.js], function(){
-    return testTaskFactory({
-      development: true
-    })
-  })
+  gulp.watch([config.files.js], testTaskFactory({
+    development: true
+  }))
 })

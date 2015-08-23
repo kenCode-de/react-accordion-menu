@@ -8,7 +8,7 @@ function task(){
   return gulp.src(config.files.test)
     .pipe(karma({
       configFile: process.cwd() + '/karma.conf.js',
-      action: 'run'
+      action: development ? 'watch' : 'run'
     }))
     .on('error', function(err) {
       this.emit('end')
