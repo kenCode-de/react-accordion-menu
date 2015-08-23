@@ -18,10 +18,7 @@ var browserifyStream = browserify({
       cache: {}, packageCache: {}, fullPaths: true
     })
 
-Object.keys(package.dependencies)
-.forEach(function (packageName) {
-  browserifyStream.exclude(packageName)
-})
+browserifyStream.exclude('react')
 
 browserifyStream.on('log', gutil.log)
 

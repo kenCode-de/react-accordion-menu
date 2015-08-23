@@ -1,4 +1,3 @@
-var React = require('react')
 var classnames = require('classnames')
 
 var AccordionNode = React.createClass({
@@ -13,13 +12,13 @@ var AccordionNode = React.createClass({
     return {
       expanded: false,
       onClick: function(depth) {
-        console.log("AccordionNode clicked: " + depth.join(" > "))
+        console.log("AccordionNode clicked: ", depth)
       },
     }
   },
   render: function(){
     var className = this.props.expanded ? 'expanded' : 'collapsed'
-    return  <span className={className}>
+    return  <span className={className} onClick={this.props.onClick}>
               I am an AccordionNode
             </span>
   }
