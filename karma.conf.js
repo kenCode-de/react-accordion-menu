@@ -64,9 +64,7 @@ module.exports = function(config) {
     singleRun: false,
 
     browserify: {
-      debug: true,
-      extensions: ['.js']
-    },
-
+      transform: ["reactify"]
+    }
   })
 }

@@ -5,6 +5,8 @@ var gulp = require('gulp')
   , rename = require('gulp-rename')
   , browserify = require('browserify')
   , watchify = require('watchify')
+  , reactify = require('reactify')
+  , browserifyShim = require('browserify-shim')
   , source = require('vinyl-source-stream')
   , buffer = require('vinyl-buffer')
   , uglify = require('gulp-uglify')
@@ -19,6 +21,8 @@ var browserifyStream = browserify({
       cache: {}, packageCache: {}, fullPaths: true
     })
 
+browserifyStream.transform(reactify)
+browserifyStream.transform(browserifyShim)
 browserifyStream.external('react')
 
 browserifyStream.on('log', gutil.log)

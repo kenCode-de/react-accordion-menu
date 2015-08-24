@@ -1,4 +1,4 @@
-var React = window.React || require('react')
+var React = require('react')
 var noop = function(){}
 var AccordionEvents = require('./AccordionEvents')
 var AccordionUtils = require('./AccordionUtils')
