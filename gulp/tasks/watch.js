@@ -7,4 +7,6 @@ gulp.task('watch', ['default','watchify'], function() {
   gulp.watch([config.files.js], testTaskFactory({
     development: true
   }))
+
+  gulp.watch([config.files.stylus], ['stylus'])
 })
