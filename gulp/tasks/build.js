@@ -43,8 +43,6 @@ function taskFactory(options){
 }
 
 function bundle(){
-  console.log( '-- development', development )
-  console.log( '-- dist', dist )
   return browserifyStream.bundle()
     .on('error', function(err){
       gutil.log('Browserify Error')

@@ -4,7 +4,9 @@
   "description": "a simple accordion in react",
   "main": "src/index.js",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "start": "gulp watch",
+    "dist": "gulp dist"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,7 @@
     "gulp-if": "^1.2.5",
     "gulp-karma": "0.0.4",
     "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.0.6",
     "gulp-uglify": "^1.2.0",
     "gulp-util": "^3.0.6",
     "karma": "^0.13.9",
@@ -43,6 +46,7 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-phantomjs-shim": "^1.1.1",
     "mocha": "^2.2.5",
+    "nib": "^1.1.0",
     "phantomjs": "^1.9.18",
     "reactify": "^1.1.1",
     "require-dir": "^0.3.0",
