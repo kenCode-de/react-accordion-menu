@@ -13,7 +13,10 @@ gulp dist
 
 ---
 
-This is a vertical accordion menu written in React.js (no more jquery!).
+This is a vertical accordion menu written in React.js (no more jquery!). 
+ 
+Demo the example above here:<br> 
+http://bitshares-munich.de/demos/React-Accordion/ 
  
 <b>Please vote, it helps me fund these apps!</b><br>
 Open BitShares wallet > Advanced > Console: approve delegate.kencode true 
