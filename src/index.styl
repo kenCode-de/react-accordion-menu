@@ -1,5 +1,8 @@
 color_grey = #D8D8D8
 
+body
+  font-family Ubuntu, Arial
+
 .accordion
   padding-left 20px
   position relative
@@ -17,6 +20,9 @@ color_grey = #D8D8D8
   &.collapsed .content
     max-height 0
 
+  .cart
+    height 14px
+    margin-right 5px
   li
     list-style-type none
     cursor pointer
@@ -30,15 +36,17 @@ color_grey = #D8D8D8
       padding 5px
 
     .title.leaf
-      color #00a9e0
-      a:hover
-        color #00587c
+      a
+        text-decoration none
+        color #00a9e0
+        &:hover
+          color #00587c
       &::after
         display none
 
     .title::after
       content ''
-      background-image url(http://bitshares-munich.evennode.com/img/arrows.png)
+      background-image url(../img/arrows.png)
       background-position 0 -24px
       border-collapse separate
       color rgb(0, 88, 124)

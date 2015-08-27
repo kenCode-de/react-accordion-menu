@@ -15,6 +15,6 @@ gulp.task('stylus', function(){
     .pipe(minifyCss({compatibility: 'ie8'}))
     .pipe(rename(config.files.module + '.css'))
     .pipe(gulp.dest(config.files.dist))
-    .pipe(gulp.dest(config.files.example))
+    .pipe(gulp.dest(config.files.example+'/css'))
 
 })
