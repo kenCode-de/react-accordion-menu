@@ -18,7 +18,7 @@ var browserifyStream = browserify({
       entries: config.entryFiles.main,
       insertGlobals: false,
       // watchify requires these options
-      cache: {}, packageCache: {}, fullPaths: true
+      cache: {}, packageCache: {}, fullPaths: false
     })
 
 browserifyStream.transform(reactify)
