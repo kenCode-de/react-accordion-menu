@@ -1,16 +1,12 @@
 # React-Accordion
 
-[![Build Status](https://travis-ci.org/christian-fei/React-Accordion.svg?branch=master)](https://travis-ci.org/christian-fei/React-Accordion)
-
 ## development
-
 ```
 npm install
 gulp watch
 ```
 
 ## distribution
-
 ```
 gulp dist
 ```
