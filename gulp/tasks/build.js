@@ -18,7 +18,7 @@ var browserifyStream = browserify({
       entries: config.entryFiles.main,
       insertGlobals: false,
       // watchify requires these options
-      cache: {}, packageCache: {}, fullPaths: true
+      cache: {}, packageCache: {}, fullPaths: false
     })
 
 browserifyStream.transform(reactify)
@@ -52,13 +52,14 @@ function bundle(){
         throw err
       }
     })
-    .pipe(source('Accordion.js'))
+    .pipe(source(config.files.module+'.js'))
     .pipe(buffer())
     .pipe(gulp.dest(config.files.dist))
+    .pipe(gulp.dest(config.files.example+'/js'))
     .pipe(uglify())
-    .pipe(rename('Accordion.min.js'))
-    .pipe(gulp.dest(config.files.example))
+    .pipe(rename(config.files.module+'.min.js'))
     .pipe(gulp.dest(config.files.dist))
+    .pipe(gulp.dest(config.files.example+'/js'))
 
 }
 

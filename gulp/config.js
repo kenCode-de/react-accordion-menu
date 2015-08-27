@@ -5,7 +5,7 @@ module.exports = {
     test: ['./src/**/*.test.js'],
     dist: './dist',
     example: './example',
-    module: 'Accordion'
+    module: 'React-Accordion'
   },
   entryFiles: {
     main: './src/index.js',
