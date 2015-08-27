@@ -1,0 +1,1 @@
+window.AccordionNode = require('./AccordionNode')

@@ -1,0 +1,70 @@
+color_grey = #D8D8D8
+
+.accordion
+  padding-left 20px
+  position relative
+  font-size 12px
+  user-select none
+  &.main
+    padding-top 5px
+    padding-bottom @padding-top
+    padding-right 10px
+    padding-left 10px
+    min-width 150px
+    display inline-block
+    border-radius 10px
+    border 1px solid color_grey
+  &.collapsed .content
+    max-height 0
+
+  li
+    list-style-type none
+    cursor pointer
+    .content
+      -webkit-transition all .3s ease-in-out
+      -o-transition all .3s ease-in-out
+      transition all .3s ease-in-out
+      overflow hidden
+      max-height 400px
+    .title
+      padding 5px
+
+    .title.leaf
+      color #00a9e0
+      a:hover
+        color #00587c
+      &::after
+        display none
+
+    .title::after
+      content ''
+      background-image url(http://bitshares-munich.evennode.com/img/arrows.png)
+      background-position 0 -24px
+      border-collapse separate
+      color rgb(0, 88, 124)
+      cursor pointer
+      display block
+      font-family Ubuntu, Arial
+      font-size 12px
+      height 12px
+      left auto
+      line-height 16px
+      list-style-type none
+      overflow-x hidden
+      overflow-y hidden
+      position absolute
+      left 10px
+      text-align left
+      top 5px
+      visibility visible
+      width 12px
+
+  &.expanded > li > .title::after
+    background-position 0 -36px
+  &.main.expanded > li > .title::after
+    background-position 0px -12px
+  &.main > li > .title::after
+    background-position 0px 0px
+    left auto
+    right 6px
+    top 9px
