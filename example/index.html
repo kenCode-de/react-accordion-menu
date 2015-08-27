@@ -19,23 +19,22 @@
       }
     </style>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&amp;subset=Latin">
-    <link rel="stylesheet" href="Accordion.css">
+    <link rel="stylesheet" href="css/React-Accordion.css">
   </head>
   <body>
     <main></main>
 
     <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js" type="text/javascript"></script>
-    <script src="http://bitshares-munich.evennode.com/js/JSXTransformer-0.13.3.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js" type="text/jsx"></script>
+    <script src="js/React-Accordion.js"></script>
     -->
-    <script src="http://bitshares-munich.evennode.com/js/react-with-addons-0.13.3.min.js" type="text/javascript"></script>
-
-    <script src="Accordion.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
+    <script src="js/react-with-addons-0.13.3.min.js" type="text/javascript"></script>
+    <script src="js/React-Accordion.min.js"></script>
+    <script>
       var accordion = React.createElement(AccordionNode, {className: "main", expanded: true},
                         React.createElement("div", {className: "title"},
-                          React.createElement("img", {src: "http://bitshares-munich.evennode.com/img/cart.png", alt: "cart", className: "cart"}),
+                          React.createElement("img", {src: "img/cart.png", alt: "cart", className: "cart"}),
                           React.createElement("strong", null, "Smartcoin Shop")
                         ),
                         React.createElement("div", {className: "content"},
@@ -206,7 +205,7 @@
     <script type="text/jsx">
                       <AccordionNode className="main" expanded={true}>
                         <div className="title">
-                          <img src="http://bitshares-munich.evennode.com/img/cart.png" alt="cart" className="cart"/>
+                          <img src="img/cart.png" alt="cart" className="cart"/>
                           <strong>Smartcoin Shop</strong>
                         </div>
                         <div className="content">
