@@ -1,6 +1,6 @@
 {
   "name": "React-Accordion",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A vertical accordion menu written in React.js (instead of jquery)",
   "main": "src/index.js",
   "scripts": {
