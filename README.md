@@ -1,18 +1,3 @@
-# React-Accordion
-
-## development
-```
-npm install
-gulp watch
-```
-
-## distribution
-```
-gulp dist
-```
-
----
-
 This is a vertical accordion menu written in React.js (no more jquery!). 
  
 Demo the example above here:<br> 
